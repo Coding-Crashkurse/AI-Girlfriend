@@ -1,0 +1,71 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  max-width: 800px;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.mat-form-field {
+  margin: 10px;
+  width: calc(
+    50% - 20px
+  ); /* Passt die Breite an, um zwei Elemente nebeneinander zu platzieren */
+}
+
+/* Responsive Design für kleinere Bildschirme */
+@media screen and (max-width: 600px) {
+  .mat-form-field {
+    width: 100%; /* Volle Breite für kleinere Bildschirme */
+  }
+}
+
+button[mat-raised-button] {
+  width: 100%; /* Volle Breite */
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #0056b3;
+}
+
+/* Stil für die Gruppierung von Formularelementen */
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.intro {
+  padding-top: 20px;
+  color: white;
+}

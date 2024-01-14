@@ -1,0 +1,99 @@
+<div class="intro">
+    <h1>Your AI Romantic Partner</h1>
+    <p class="intro-text">
+        Create your ideal AI-generated romantic partner by filling out the form below. Customize their attributes to
+        match
+        your preferences and let our AI do the rest!
+    </p>
+</div>
+
+<form (ngSubmit)="submitForm()">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="formData.name" name="name">
+    </mat-form-field>
+
+    <div *ngIf="formData.name">
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <mat-select [(ngModel)]="formData.age" name="age">
+                <mat-option value="18-25">18-25</mat-option>
+                <mat-option value="26-30">26-30</mat-option>
+                <mat-option value="31-35">31-35</mat-option>
+                <mat-option value="36-40">36-40</mat-option>
+                <mat-option value="41-45">41-45</mat-option>
+                <mat-option value="46-50">46-50</mat-option>
+                <mat-option value="51-55">51-55</mat-option>
+                <mat-option value="56-60">56-60</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Hair Color</mat-label>
+            <mat-select [(ngModel)]="formData.hairColor" name="hairColor">
+                <mat-option value="blond">Blond</mat-option>
+                <mat-option value="brown">Brown</mat-option>
+                <mat-option value="black">Black</mat-option>
+                <mat-option value="red">Red</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Body Type</mat-label>
+            <mat-select [(ngModel)]="formData.bodyType" name="bodyType">
+                <mat-option value="slim">Slim</mat-option>
+                <mat-option value="athletic">Athletic</mat-option>
+                <mat-option value="plump">Plump</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Eye Color</mat-label>
+            <mat-select [(ngModel)]="formData.eyeColor" name="eyeColor">
+                <mat-option value="blue">Blue</mat-option>
+                <mat-option value="green">Green</mat-option>
+                <mat-option value="brown">Brown</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div *ngIf="formData.age && formData.hairColor && formData.bodyType && formData.eyeColor">
+        <mat-form-field appearance="fill">
+            <mat-label>Hair Type</mat-label>
+            <mat-select [(ngModel)]="formData.hairType" name="hairType">
+                <mat-option value="curly">Curly</mat-option>
+                <mat-option value="straight">Straight</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Skin Color</mat-label>
+            <mat-select [(ngModel)]="formData.skinColor" name="skinColor">
+                <mat-option value="light">Light</mat-option>
+                <mat-option value="medium">Medium</mat-option>
+                <mat-option value="dark">Dark</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Ethnicity</mat-label>
+            <mat-select [(ngModel)]="formData.ethnicity" name="ethnicity">
+                <mat-option value="european">European</mat-option>
+                <mat-option value="asian">Asian</mat-option>
+                <mat-option value="african">African</mat-option>
+                <mat-option value="latinAmerican">Latin American</mat-option>
+                <mat-option value="middleEastern">Middle Eastern</mat-option>
+                <mat-option value="mixed">Mixed</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Gender</mat-label>
+            <mat-select [(ngModel)]="formData.gender" name="gender">
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+                <mat-option value="diverse">Diverse</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" *ngIf="isFormValid()" style="width: 100%;">Submit</button>
+</form>

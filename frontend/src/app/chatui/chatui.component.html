@@ -1,0 +1,19 @@
+<div class="chat-ui">
+    <!-- Bereich für das angezeigte Bild -->
+    <div *ngIf="imageData" class="image-container">
+        <img [src]="imageData" alt="AI Generated Image">
+    </div>
+
+    <!-- Chat Interface -->
+    <div class="chat-interface">
+        <!-- Fake Anfangsnachricht -->
+        <div class="message user-message">
+            <p>User: Hi there!</p>
+        </div>
+        <div class="message ai-message">
+            <p>AI: Hello! How can I assist you today?</p>
+        </div>
+
+        <!-- Weitere Nachrichten hier... -->
+    </div>
+</div>

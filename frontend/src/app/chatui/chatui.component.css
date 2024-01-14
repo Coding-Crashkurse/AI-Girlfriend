@@ -1,0 +1,30 @@
+.chat-ui {
+  max-width: 600px;
+  margin: auto;
+}
+
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chat-interface {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+}
+
+.message {
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.user-message {
+  text-align: left;
+  background-color: #f0f0f0;
+}
+
+.ai-message {
+  text-align: right;
+  background-color: #d0e0f0;
+}
