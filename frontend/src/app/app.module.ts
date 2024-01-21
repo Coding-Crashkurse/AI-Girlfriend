@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { ChatuiComponent } from './chatui/chatui.component';
 import { CreateaiComponent } from './createai/createai.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [AppComponent, ChatuiComponent, CreateaiComponent],
@@ -23,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatInputModule,
     MatSelectModule,
     BrowserAnimationsModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

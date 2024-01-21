@@ -95,5 +95,10 @@
         </mat-form-field>
     </div>
 
-    <button mat-raised-button color="primary" type="submit" *ngIf="isFormValid()" style="width: 100%;">Submit</button>
+    <div *ngIf="isFormValid()">
+        <button mat-raised-button color="primary" type="submit" [disabled]="isLoading">
+            <mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner>
+            <span *ngIf="!isLoading">Submit</span>
+        </button>
+    </div>
 </form>

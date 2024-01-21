@@ -1,6 +1,7 @@
 .chat-ui {
   max-width: 600px;
   margin: auto;
+  font-family: Arial, sans-serif;
 }
 
 .image-container {
@@ -11,20 +12,108 @@
 .chat-interface {
   border: 1px solid #e0e0e0;
   padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding-top: 5px;
 }
 
 .message {
+  display: flex;
+  align-items: center;
   margin: 10px 0;
-  padding: 5px;
+  padding: 10px;
   border-radius: 10px;
+  color: #333;
 }
 
 .user-message {
-  text-align: left;
   background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  text-align: left;
+  flex-direction: row; /* Ensures text is to the right of the image */
 }
 
-.ai-message {
-  text-align: right;
+.assistant-message {
   background-color: #d0e0f0;
+  border: 1px solid #a0c0e0;
+  text-align: right;
+  flex-direction: row-reverse; /* Ensures text is to the left of the image */
+}
+
+.message p {
+  flex-grow: 1;
+  margin: 0;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+}
+
+.message-input input {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.message-input button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.message-input button:hover {
+  background-color: #0056b3;
+}
+
+.image-container img {
+  max-width: 50%;
+  border-radius: 50%;
+  margin: 20px auto;
+  border: 3px solid white;
+}
+
+.system-message {
+  display: none;
+}
+
+.user-image,
+.ai-image {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures the image covers the area without stretching */
+}
+
+/* Ensures the image for user message is to the left */
+.user-message .user-image {
+  margin-right: 10px;
+}
+
+/* Ensures the image for AI message is to the right */
+.assistant-message .ai-image {
+  margin-left: 10px;
+}
+
+/* No longer needed with flexbox
+.user-message .user-image {
+  order: -1;
+}
+
+.assistant-message .ai-image {
+  order: 2;
+}
+*/
+
+/* Clear fix for floated elements if needed */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }

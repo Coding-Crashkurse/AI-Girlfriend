@@ -1,19 +1,23 @@
 <div class="chat-ui">
-    <!-- Bereich für das angezeigte Bild -->
     <div *ngIf="imageData" class="image-container">
         <img [src]="imageData" alt="AI Generated Image">
     </div>
 
-    <!-- Chat Interface -->
-    <div class="chat-interface">
-        <!-- Fake Anfangsnachricht -->
-        <div class="message user-message">
-            <p>User: Hi there!</p>
+    <div *ngIf="messages && messages.length > 0" class="chat-interface">
+        <div *ngFor="let message of messages" class="message" [ngClass]="{
+                 'user-message': message.role === 'user',
+                 'assistant-message': message.role === 'assistant',
+                 'system-message': message.role === 'system'
+             }">
+            <img *ngIf="message.role === 'user'" [src]="userImage" alt="User Image" class="user-image">
+            <img *ngIf="message.role === 'assistant'" [src]="imageData || partnerImage" alt="AI Image" class="ai-image">
+            <p>{{ message.content }}</p>
         </div>
-        <div class="message ai-message">
-            <p>AI: Hello! How can I assist you today?</p>
-        </div>
+    </div>
 
-        <!-- Weitere Nachrichten hier... -->
+
+    <div class="message-input">
+        <input type="text" [(ngModel)]="userInput" placeholder="Type a message..." (keyup.enter)="sendMessage()">
+        <button (click)="sendMessage()">Send</button>
     </div>
 </div>

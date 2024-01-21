@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./createai.component.css'],
 })
 export class CreateaiComponent implements OnInit {
+  isLoading = false;
+
   formData = {
     name: '',
     age: '',
@@ -39,10 +41,22 @@ export class CreateaiComponent implements OnInit {
   ngOnInit(): void {}
 
   submitForm() {
-    console.log(this.formData);
-    this.dataService.submitFormData(this.formData).subscribe((response) => {
-      this.dataService.storeImageData(response.data);
-      this.router.navigate(['/chat-ui']);
-    });
+    this.isLoading = true;
+
+    this.dataService.storeAiName(this.formData.name);
+    this.dataService.storeFormData(this.formData);
+
+    this.dataService.submitFormData(this.formData).subscribe(
+      (response) => {
+        this.dataService.storeImageData(response.data);
+
+        this.isLoading = false;
+        this.router.navigate(['/chat-ui']);
+      },
+      (error) => {
+        console.error('Error submitting form:', error);
+        this.isLoading = false;
+      }
+    );
   }
 }

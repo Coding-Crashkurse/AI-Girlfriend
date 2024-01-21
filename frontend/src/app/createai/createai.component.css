@@ -69,3 +69,8 @@ h1 {
   padding-top: 20px;
   color: white;
 }
+
+.white-spinner .mat-progress-spinner circle,
+.white-spinner .mat-spinner circle {
+  stroke: white;
+}
