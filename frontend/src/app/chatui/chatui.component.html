@@ -15,6 +15,9 @@
         </div>
     </div>
 
+    <div class="hello-msg">
+        <p>Hi, I am {{ aiName }}, what do you want to talk about?</p>
+    </div>
 
     <div class="message-input">
         <input type="text" [(ngModel)]="userInput" placeholder="Type a message..." (keyup.enter)="sendMessage()">

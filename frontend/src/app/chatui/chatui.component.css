@@ -30,14 +30,14 @@
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   text-align: left;
-  flex-direction: row; /* Ensures text is to the right of the image */
+  flex-direction: row;
 }
 
 .assistant-message {
   background-color: #d0e0f0;
   border: 1px solid #a0c0e0;
   text-align: right;
-  flex-direction: row-reverse; /* Ensures text is to the left of the image */
+  flex-direction: row-reverse;
 }
 
 .message p {
@@ -85,35 +85,28 @@
 
 .user-image,
 .ai-image {
-  width: 50px; /* Adjust size as needed */
-  height: 50px; /* Adjust size as needed */
-  border-radius: 50%; /* Makes the image round */
-  object-fit: cover; /* Ensures the image covers the area without stretching */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-/* Ensures the image for user message is to the left */
 .user-message .user-image {
   margin-right: 10px;
 }
 
-/* Ensures the image for AI message is to the right */
 .assistant-message .ai-image {
   margin-left: 10px;
 }
 
-/* No longer needed with flexbox
-.user-message .user-image {
-  order: -1;
-}
-
-.assistant-message .ai-image {
-  order: 2;
-}
-*/
-
-/* Clear fix for floated elements if needed */
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
+}
+
+.chat-ui .hello-msg {
+  text-align: center;
+  color: white;
+  font-size: 18px;
 }
